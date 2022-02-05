@@ -271,13 +271,13 @@ in the minor orgtbl-mode. Hence its name:
     | eggs   |   451 |
     | bacon  |     0 |
 
-The table can be further controlled with `label`, `caption` and `attr`:
+The table can be further controlled with `label`, `caption` and `attr_latex`:
 
     >>> print(tabulate(table, headers, tablefmt="orgtbl",
-    ... label='test-tbl', caption='A test table', attr=':placement [H]'))
+    ... label='test-tbl', caption='A test table', attr_latex=':placement [H]'))
     #+caption: A test table}
     #+label: test-tbl
-    #+ATTR_LATEX: :placement [H]
+    #+attr_latex: :placement [H]
     | item   |   qty |
     |--------+-------|
     | spam   |    42 |
