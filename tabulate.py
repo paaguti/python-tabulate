@@ -63,7 +63,7 @@ except ImportError:
 
 
 __all__ = ["tabulate", "tabulate_formats", "simple_separated_format"]
-__version__ = "0.8.10a"
+__version__ = "0.8.11"
 
 
 # minimum extra space in headers
@@ -305,14 +305,11 @@ def _orgtbl_extras (table_text, **kwargs):
     # add additional org-mode headers to control the format
     # of the generated table
     #
-    caption = kwargs.pop('caption',None)
-    label   = kwargs.pop('label',None)
-    attr    = kwargs.pop('attr',None)
-    result = '' if caption is None else '#+caption: '+caption+'\n'
-    if label is not None: result += '#+label: '+label+'\n'
-    if attr is not None: result += '#+ATTR_LATEX: '+attr+'\n'
+    for key in ['attr_latex', 'label', 'caption']:
+        value    = kwargs.pop(key, None)
+        if value is not None:  table_text.insert(0, '#+'+key+': '+value)
 
-    return _undefined_kwargs(result + table_text,**kwargs)
+    return _undefined_kwargs(table_text,**kwargs)
 
 _table_formats = {
     "simple": TableFormat(
@@ -1495,27 +1492,33 @@ def tabulate(
     | spam      |   41.9999 |
     | eggs      |  451      |
 
-    Additionally you can control the prelude to the table with arguments
-    caption, label and attr
-
-    >>> tabulate(df,
-    ...     caption='extended tabulate',
-    ...     label='labextend',
-    ...     attr=':environment longtable :align p{2cm}p{3cm}p{3cm} :placement [h] :center t',
-    ...     headers=df.columns, tablefmt='orgtbl',
-    ...     showindex=False)
-    #+caption: extended tabulate
-    #+label: labextend
-    #+ATTR_LATEX: :environment longtable :align p{2cm}p{3cm}p{3cm} :placement [h] :center t
-    |        x |       sin(x) |    cos(x) |
-    |----------+--------------+-----------|
-    | 0        |  0           |  1        |
-    | 0.628319 |  0.587785    |  0.809017 |
-    | 1.25664  |  0.951057    |  0.309017 |
+    or
 
     >>> print(tabulate([["spam", 41.9999], ["eggs", "451.0"]], tablefmt="orgtbl"))
     | spam |  41.9999 |
     | eggs | 451      |
+
+    Additionally you can control the prelude to the table with arguments
+    `caption`, `label` and/or `attr_latex`. You can choose to leave any away.
+    A call with all arguments:
+
+    >>> print(tabulate([["spam", 41.9999], ["eggs", "451.0"]],
+    ...                ["strings", "numbers"],
+    ...     caption='extended tabulate',
+    ...     label='labextend',
+    ...     attr_latex=':environment longtable :align p{2cm}p{3cm}p{3cm} :placement [h] :center t',
+    ...     tablefmt='orgtbl'))
+    #+caption: extended tabulate
+    #+label: labextend
+    #+attr_latex: :environment longtable :align p{2cm}p{3cm}p{3cm} :placement [h] :center t
+    | strings   |   numbers |
+    |-----------+-----------|
+    | spam      |   41.9999 |
+    | eggs      |  451      |
+
+    The order in which the extra arguments are included is always `caption` then `label` and,
+    finally, `attr_latex`
+
 
     "rst" is like a simple table format from reStructuredText; please
     note that reStructuredText accepts also "grid" tables:
@@ -1921,7 +1924,7 @@ def _format_table(fmt, headers, rows, colwidths, colaligns, is_multiline,**kwarg
 
     if headers or rows:
         # TODO: maybe treat lines and then join
-        output = fmt.extras("\n".join(lines), **kwargs)
+        output = '\n'.join(fmt.extras(lines, **kwargs))
         if fmt.lineabove == _html_begin_table_without_header:
             return JupyterHTMLStr(output)
         else:
