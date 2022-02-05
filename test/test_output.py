@@ -1280,6 +1280,44 @@ def test_latex_extras():
         ]
     )
     assert_equal(expected, result)
+    result = tabulate(
+        _test_table, raw_test_table_headers, tablefmt="latex", label="tab:test"
+    )
+    expected = "\n".join(
+        [
+            r"\begin{tabular}{lr}",
+            r"\hline",
+            r" strings   &   numbers (\$N\_0\$) \\",
+            r"\hline",
+            r" spam      &           41.9999 \\",
+            r" eggs      &          451      \\",
+            r"\hline",
+            r"\end{tabular}",
+            r"\label{tab:test}",
+        ]
+    )
+    assert_equal(expected, result)
+    result = tabulate(
+        _test_table,
+        raw_test_table_headers,
+        tablefmt="latex",
+        caption="My test table",
+        label="tab:test",
+    )
+    expected = "\n".join(
+        [
+            r"\begin{tabular}{lr}",
+            r"\hline",
+            r" strings   &   numbers (\$N\_0\$) \\",
+            r"\hline",
+            r" spam      &           41.9999 \\",
+            r" eggs      &          451      \\",
+            r"\hline",
+            r"\end{tabular}",
+            r"\caption{\label{tab:test}My test table}",
+        ]
+    )
+    assert_equal(expected, result)
 
 
 def test_latex():
