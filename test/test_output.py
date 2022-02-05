@@ -1259,6 +1259,29 @@ def test_unsafehtml_headerless():
     assert result._repr_html_() == result.str
 
 
+def test_latex_extras():
+    "Output: latex with headers and replaced characters"
+    raw_test_table_headers = list(_test_table_headers)
+    raw_test_table_headers[-1] += " ($N_0$)"
+    result = tabulate(
+        _test_table, raw_test_table_headers, tablefmt="latex", caption="Test caption"
+    )
+    expected = "\n".join(
+        [
+            r"\begin{tabular}{lr}",
+            r"\hline",
+            r" strings   &   numbers (\$N\_0\$) \\",
+            r"\hline",
+            r" spam      &           41.9999 \\",
+            r" eggs      &          451      \\",
+            r"\hline",
+            r"\end{tabular}",
+            r"\caption{Test caption}",
+        ]
+    )
+    assert_equal(expected, result)
+
+
 def test_latex():
     "Output: latex with headers and replaced characters"
     raw_test_table_headers = list(_test_table_headers)

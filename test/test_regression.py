@@ -445,6 +445,10 @@ def test_empty_pipe_table_with_columns():
     assert_equal(result, expected)
 
 
+def _test_extras(table, **kwargs):
+    return table
+
+
 def test_custom_tablefmt():
     "Regression: allow custom TableFormat that specifies with_header_hide (github issue #20)"
     tablefmt = TableFormat(
@@ -456,6 +460,7 @@ def test_custom_tablefmt():
         datarow=DataRow("", "  ", ""),
         padding=0,
         with_header_hide=["lineabove", "linebelow"],
+        extras=_test_extras,
     )
     rows = [["foo", "bar"], ["baz", "qux"]]
     expected = "\n".join(["A    B", "---  ---", "foo  bar", "baz  qux"])
