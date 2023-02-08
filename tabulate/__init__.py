@@ -349,7 +349,7 @@ _table_formats = {
         datarow=DataRow("", "  ", ""),
         padding=0,
         with_header_hide=["lineabove", "linebelow"],
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "plain": TableFormat(
         lineabove=None,
@@ -360,7 +360,7 @@ _table_formats = {
         datarow=DataRow("", "  ", ""),
         padding=0,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "grid": TableFormat(
         lineabove=Line("+", "-", "+", "+"),
@@ -371,7 +371,7 @@ _table_formats = {
         datarow=DataRow("|", "|", "|"),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "simple_grid": TableFormat(
         lineabove=Line("┌", "─", "┬", "┐"),
@@ -382,6 +382,7 @@ _table_formats = {
         datarow=DataRow("│", "│", "│"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "rounded_grid": TableFormat(
         lineabove=Line("╭", "─", "┬", "╮"),
@@ -392,6 +393,7 @@ _table_formats = {
         datarow=DataRow("│", "│", "│"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "heavy_grid": TableFormat(
         lineabove=Line("┏", "━", "┳", "┓"),
@@ -402,6 +404,7 @@ _table_formats = {
         datarow=DataRow("┃", "┃", "┃"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "mixed_grid": TableFormat(
         lineabove=Line("┍", "━", "┯", "┑"),
@@ -412,6 +415,7 @@ _table_formats = {
         datarow=DataRow("│", "│", "│"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "double_grid": TableFormat(
         lineabove=Line("╔", "═", "╦", "╗"),
@@ -422,6 +426,7 @@ _table_formats = {
         datarow=DataRow("║", "║", "║"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "fancy_grid": TableFormat(
         lineabove=Line("╒", "═", "╤", "╕"),
@@ -432,7 +437,7 @@ _table_formats = {
         datarow=DataRow("│", "│", "│"),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "outline": TableFormat(
         lineabove=Line("+", "-", "+", "+"),
@@ -443,6 +448,7 @@ _table_formats = {
         datarow=DataRow("|", "|", "|"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "simple_outline": TableFormat(
         lineabove=Line("┌", "─", "┬", "┐"),
@@ -453,6 +459,7 @@ _table_formats = {
         datarow=DataRow("│", "│", "│"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "rounded_outline": TableFormat(
         lineabove=Line("╭", "─", "┬", "╮"),
@@ -463,6 +470,7 @@ _table_formats = {
         datarow=DataRow("│", "│", "│"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "heavy_outline": TableFormat(
         lineabove=Line("┏", "━", "┳", "┓"),
@@ -473,6 +481,7 @@ _table_formats = {
         datarow=DataRow("┃", "┃", "┃"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "mixed_outline": TableFormat(
         lineabove=Line("┍", "━", "┯", "┑"),
@@ -483,6 +492,7 @@ _table_formats = {
         datarow=DataRow("│", "│", "│"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "double_outline": TableFormat(
         lineabove=Line("╔", "═", "╦", "╗"),
@@ -493,6 +503,7 @@ _table_formats = {
         datarow=DataRow("║", "║", "║"),
         padding=1,
         with_header_hide=None,
+        extras=_undefined_kwargs,
     ),
     "fancy_outline": TableFormat(
         lineabove=Line("╒", "═", "╤", "╕"),
@@ -503,7 +514,7 @@ _table_formats = {
         datarow=DataRow("│", "│", "│"),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "github": TableFormat(
         lineabove=Line("|", "-", "|", "|"),
@@ -514,7 +525,7 @@ _table_formats = {
         datarow=DataRow("|", "|", "|"),
         padding=1,
         with_header_hide=["lineabove"],
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "pipe": TableFormat(
         lineabove=_pipe_line_with_colons,
@@ -525,7 +536,7 @@ _table_formats = {
         datarow=DataRow("|", "|", "|"),
         padding=1,
         with_header_hide=["lineabove"],
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "orgtbl": TableFormat(
         lineabove=None,
@@ -536,7 +547,7 @@ _table_formats = {
         datarow=DataRow("|", "|", "|"),
         padding=1,
         with_header_hide=None,
-        extras = _orgtbl_extras,
+        extras=_orgtbl_extras,
     ),
     "jira": TableFormat(
         lineabove=None,
@@ -547,7 +558,7 @@ _table_formats = {
         datarow=DataRow("|", "|", "|"),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "presto": TableFormat(
         lineabove=None,
@@ -558,7 +569,7 @@ _table_formats = {
         datarow=DataRow("", "|", ""),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "pretty": TableFormat(
         lineabove=Line("+", "-", "+", "+"),
@@ -569,7 +580,7 @@ _table_formats = {
         datarow=DataRow("|", "|", "|"),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "psql": TableFormat(
         lineabove=Line("+", "-", "+", "+"),
@@ -580,7 +591,7 @@ _table_formats = {
         datarow=DataRow("|", "|", "|"),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "rst": TableFormat(
         lineabove=Line("", "=", "  ", ""),
@@ -591,7 +602,7 @@ _table_formats = {
         datarow=DataRow("", "  ", ""),
         padding=0,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "mediawiki": TableFormat(
         lineabove=Line(
@@ -607,7 +618,7 @@ _table_formats = {
         datarow=partial(_mediawiki_row_with_attrs, "|"),
         padding=0,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "moinmoin": TableFormat(
         lineabove=None,
@@ -618,7 +629,7 @@ _table_formats = {
         datarow=partial(_moin_row_with_attrs, "||"),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "youtrack": TableFormat(
         lineabove=None,
@@ -629,7 +640,7 @@ _table_formats = {
         datarow=DataRow("| ", " | ", " |"),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "html": TableFormat(
         lineabove=_html_begin_table_without_header,
@@ -640,7 +651,7 @@ _table_formats = {
         datarow=partial(_html_row_with_attrs, "td", False),
         padding=0,
         with_header_hide=["lineabove"],
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "unsafehtml": TableFormat(
         lineabove=_html_begin_table_without_header,
@@ -651,7 +662,7 @@ _table_formats = {
         datarow=partial(_html_row_with_attrs, "td", True),
         padding=0,
         with_header_hide=["lineabove"],
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "latex": TableFormat(
         lineabove=_latex_line_begin_tabular,
@@ -662,7 +673,7 @@ _table_formats = {
         datarow=_latex_row,
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "latex_raw": TableFormat(
         lineabove=_latex_line_begin_tabular,
@@ -673,7 +684,7 @@ _table_formats = {
         datarow=partial(_latex_row, escrules={}),
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs, # TODO
+        extras=_undefined_kwargs, # TODO
     ),
     "latex_booktabs": TableFormat(
         lineabove=partial(_latex_line_begin_tabular, booktabs=True),
@@ -684,7 +695,7 @@ _table_formats = {
         datarow=_latex_row,
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs, # TODO
+        extras=_undefined_kwargs, # TODO
     ),
     "latex_longtable": TableFormat(
         lineabove=partial(_latex_line_begin_tabular, longtable=True),
@@ -695,7 +706,7 @@ _table_formats = {
         datarow=_latex_row,
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs, # TODO
+        extras=_undefined_kwargs, # TODO
     ),
     "tsv": TableFormat(
         lineabove=None,
@@ -706,7 +717,7 @@ _table_formats = {
         datarow=DataRow("", "\t", ""),
         padding=0,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "textile": TableFormat(
         lineabove=None,
@@ -717,7 +728,7 @@ _table_formats = {
         datarow=_textile_row_with_attrs,
         padding=1,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     ),
     "asciidoc": TableFormat(
         lineabove=partial(_asciidoc_row, False),
@@ -728,6 +739,7 @@ _table_formats = {
         datarow=partial(_asciidoc_row, False),
         padding=1,
         with_header_hide=["lineabove"],
+        extras=_undefined_kwargs,
     ),
 }
 
@@ -848,7 +860,7 @@ def simple_separated_format(separator):
         datarow=DataRow("", separator, ""),
         padding=0,
         with_header_hide=None,
-        extras = _undefined_kwargs,
+        extras=_undefined_kwargs,
     )
 
 
@@ -1638,12 +1650,9 @@ def tabulate(
     disable_numparse=False,
     colalign=None,
     maxcolwidths=None,
-<<<<<<< HEAD:tabulate.py
-    **kwargs,
-=======
     rowalign=None,
     maxheadercolwidths=None,
->>>>>>> upstream/master:tabulate/__init__.py
+    **kwargs,
 ):
     """Format a fixed width table for pretty printing.
 
@@ -2291,17 +2300,14 @@ def tabulate(
     if not isinstance(tablefmt, TableFormat):
         tablefmt = _table_formats.get(tablefmt, _table_formats["simple"])
 
-<<<<<<< HEAD:tabulate.py
-    return _format_table(tablefmt, headers, rows, minwidths, aligns, is_multiline, **kwargs)
-=======
     ra_default = rowalign if isinstance(rowalign, str) else None
     rowaligns = _expand_iterable(rowalign, len(rows), ra_default)
     _reinsert_separating_lines(rows, separating_lines)
 
     return _format_table(
-        tablefmt, headers, rows, minwidths, aligns, is_multiline, rowaligns=rowaligns
+        tablefmt, headers, rows, minwidths, aligns, is_multiline,
+        rowaligns=rowaligns, **kwargs
     )
->>>>>>> upstream/master:tabulate/__init__.py
 
 
 def _expand_numparse(disable_numparse, column_count):
@@ -2431,11 +2437,8 @@ class JupyterHTMLStr(str):
         return self
 
 
-<<<<<<< HEAD:tabulate.py
-def _format_table(fmt, headers, rows, colwidths, colaligns, is_multiline,**kwargs):
-=======
-def _format_table(fmt, headers, rows, colwidths, colaligns, is_multiline, rowaligns):
->>>>>>> upstream/master:tabulate/__init__.py
+def _format_table(fmt, headers, rows, colwidths, colaligns, is_multiline,
+                  rowaligns, **kwargs):
     """Produce a plain-text representation of the table."""
     lines = []
     hidden = fmt.with_header_hide if (headers and fmt.with_header_hide) else []
